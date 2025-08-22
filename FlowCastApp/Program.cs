@@ -1,3 +1,5 @@
+using FlowCast.Infrastructure.Persistence;
+
 namespace FlowCastApp
 {
     public class Program
@@ -6,16 +8,17 @@ namespace FlowCastApp
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // adding layers
+
+            builder.Services.AddPersistenceLayerIoC(builder.Configuration);
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
