@@ -1,3 +1,4 @@
+using FlowCast.Core.Application;
 using FlowCast.Infrastructure.Persistence;
 
 namespace FlowCastApp
@@ -13,6 +14,7 @@ namespace FlowCastApp
             // adding layers
 
             builder.Services.AddPersistenceLayerIoC(builder.Configuration);
+            builder.Services.AddApplicationLayerIoc();
 
             var app = builder.Build();
 
