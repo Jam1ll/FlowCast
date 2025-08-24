@@ -11,7 +11,6 @@ namespace FlowCast.Infrastructure.Persistence.EntityConfigurations
             builder.ToTable("PredictionResults");
             builder.HasKey(pr => pr.Id);
 
-            builder.Property(pr => pr.Results).IsRequired();
             builder.Property(pr => pr.PredictionMode).IsRequired();
             builder.Property(pr => pr.DateAdded).IsRequired();
 

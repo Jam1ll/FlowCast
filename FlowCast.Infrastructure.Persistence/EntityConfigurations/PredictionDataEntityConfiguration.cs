@@ -12,6 +12,7 @@ namespace FlowCast.Infrastructure.Persistence.EntityConfigurations
             builder.HasKey(pd => pd.Id);
 
             builder.Property(pd => pd.Values).IsRequired();
+            builder.Property(pd => pd.PredictionMode).IsRequired();
 
             #region relationships
 

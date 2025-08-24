@@ -11,7 +11,8 @@ namespace FlowCast.Core.Application.Mappings.DTOsAndViewModels
             CreateMap<PredictionDataDTO, PredictionDataViewModel>().ReverseMap();
             CreateMap<PredictionDataDTO, SavePredictionDataViewModel>().ReverseMap();
             CreateMap<PredictionDataDTO, DeletePredictionDataViewModel>().ReverseMap()
-                .ForMember(dest => dest.Values, opt => opt.Ignore());
+                .ForMember(dest => dest.Values, opt => opt.Ignore())
+                .ForMember(dest => dest.PredictionMode, opt => opt.Ignore());
         }
     }
 }
